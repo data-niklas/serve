@@ -1,0 +1,6 @@
+version: 1.0
+shards:
+  cor:
+    github: watzon/cor
+    commit: 031e5e6168055211bee019df0ceea6d81af9c5d2
+

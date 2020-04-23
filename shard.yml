@@ -1,0 +1,16 @@
+name: serve
+version: 0.1.0
+
+authors:
+  - Niklas Loeser <niklas@4loeser.net>
+
+targets:
+  serve:
+    main: src/serve.cr
+
+crystal: 0.33.0
+
+license: MIT
+dependencies:
+  cor:
+    github: watzon/cor
