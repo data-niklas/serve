@@ -64,6 +64,9 @@ def cache_request?(context : HTTP::Server::Context, last_modified : Time) : Bool
   end
 end
 
+
+
+
 def etag(modification_time)
   %{W/"#{modification_time.to_unix}"}
 end
@@ -104,9 +107,11 @@ OptionParser.parse do |parser|
   parser.on "-e=FILES", "--exclude=FILES", "Exclude" do |files|
     excluding = files.split(",")
   end
+
   parser.on "-p=PORT", "--port=PORT", "Port" do |prt|
     port = prt
   end
+
 
   parser.on "-c", "--cors", "CORS" do
     cors = true
@@ -143,6 +148,7 @@ if compress
   handlers << HTTP::CompressHandler.new
 end
 server = HTTP::Server.new(handlers) do |context|
+
   res = context.response
   if context.request.method == "GET"
     file_path = path.join(context.request.path)
